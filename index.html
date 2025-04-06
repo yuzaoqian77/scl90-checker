@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SCL-90 心理测评（简化版）</title>
+  <title>SCL-90 心理测评</title>
   <style>
     body {
       font-family: "Microsoft YaHei", sans-serif;
@@ -13,10 +13,12 @@
       background-color: #f9f9f9;
     }
     #startPage, #questionContainer, #result {
-  margin-top: 30px;
-  background: transparent;
+  display: none;
+  height: 0;
   padding: 0;
-  border-radius: 0;
+  margin: 0;
+  background: none;
+  border: none;
   box-shadow: none;
 }
     h1, h3 {
@@ -89,9 +91,9 @@
 </head>
 <body>
 
-<div id="startPage">
-  <h1>SCL-90 症状自评量表（简化版）</h1>
-  <p>共45题，请根据您最近一周的感受逐题作答。</p>
+<div id="startPage" style="display: block;">
+  <h1>SCL-90 症状自评量表</h1>
+  <p>共90题，请根据您最近一周的感受逐题作答。</p>
   <div style="text-align:center;"><button onclick="startTest()">开始答题</button></div>
 </div>
 
@@ -104,7 +106,7 @@
   </div>
 </div>
 
-<div id="result"></div>
+<div id="result" style="display: none; height: 0; padding: 0; margin: 0;"></div>
 
 <script>
   const questions = [

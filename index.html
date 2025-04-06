@@ -196,10 +196,10 @@
     }
 
     function interpret(score) {
-        if (score < 1.5) return "正常（无明显困扰）";
-        if (score < 2.0) return "轻度困扰";
-        if (score < 3.0) return "中度困扰，建议关注";
-        return "重度困扰，建议咨询专业人士";
+        if (score < 2.0) return "正常（无明显困扰）";
+        if (score < 2.5) return "轻度困扰";
+        if (score < 3.5) return "中度困扰，建议关注";
+        return "重度困扰";
     }
 
     function showResult() {

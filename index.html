@@ -198,7 +198,7 @@
     function interpret(score) {
         if (score < 2.0) return "正常（无明显困扰）";
         if (score < 2.5) return "轻度困扰";
-        if (score < 3.5) return "中度困扰，建议关注";
+        if (score < 3.0) return "中度困扰，建议关注";
         return "重度困扰";
     }
 
@@ -239,9 +239,9 @@
                     label: '维度平均得分',
                     data: chartData,
                     backgroundColor: chartData.map(score => {
-                        if (score >= 3) return 'rgba(255, 99, 132, 0.7)'; // 红色：重度
+                        if (score > 3.0) return 'rgba(255, 99, 132, 0.7)'; // 红色：重度
                         if (score >= 2.5) return 'rgba(255, 159, 64, 0.7)'; // 橙色：中度
-                        if (score >= 2) return 'rgba(255, 206, 86, 0.7)'; // 黄色：轻度
+                        if (score >= 2.0) return 'rgba(255, 206, 86, 0.7)'; // 黄色：轻度
                         return 'rgba(75, 192, 192, 0.7)'; // 蓝绿：正常
                     })
                 }]
@@ -256,7 +256,7 @@
                             label: function(context) {
                                 const score = context.raw;
                                 let level = '';
-                                if (score >= 3) level = '重度';
+                                if (score >= 3.5) level = '重度';
                                 else if (score >= 2.5) level = '中度';
                                 else if (score >= 2) level = '轻度';
                                 else level = '正常';
